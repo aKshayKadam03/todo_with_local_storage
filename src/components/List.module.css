@@ -1,0 +1,93 @@
+ 
+.App__list__item{
+  display: flex;
+  width: 800px;
+  margin: 20px auto;
+}
+
+i{
+    color: rgb(41, 40, 42);
+    font-size: 30px;
+}
+
+i:hover{
+    color: red;
+    animation-name: shake;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    transition: all 0.2s ease-in;
+}
+
+table{
+    width: 80%;
+    margin: auto;
+}
+
+ 
+table > tbody > tr{
+    background-color: blanchedalmond;
+    height: 50px;
+    margin: 100px;
+    padding: 2% 5%;
+    align-items: center;
+    /* justify-content: space-around; */
+    font-size: 18px;
+    text-align: left;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+
+ 
+td:nth-child(1){
+    width: 100px;
+    max-width: 100px;
+    text-align: center;
+    color: rgb(41, 40, 42);
+}
+
+td:nth-child(2){
+   max-width: 600px;
+   width: 600px;
+   overflow:hidden;
+   text-transform: capitalize;
+    color: #eeeeee;
+}
+td:nth-child(3){
+    max-width: 50px;
+ }  
+
+ tr:nth-child(2n){
+    animation-name: leftToRight;
+    animation-duration: 0.8s;
+    background-color: #b088f9;
+  
+}
+
+tr:nth-child(2n+1){
+    animation-name: rightToLeft;
+    animation-duration: 0.8s;
+    background-color: #98acf8;
+}
+
+
+/* Animations */
+
+@keyframes leftToRight{
+    0% {left : -1000px}
+    80% {left: 200px;}
+    100% {left: 0px;}
+ }
+
+ @keyframes rightToLeft{
+    0% {right : -1000px}
+    80% {right: 200px;}
+    100% {right: 0px;}
+ }
+
+ @keyframes shake{
+    0% { transform: translate(2px, 2px) rotate(-10deg) scale(1.2); }
+  50% { transform: translate(-2px, 2px) rotate(10deg) scale(1.2); }
+  100% { transform: translate(2px, -2px) rotate(-10deg) scale(1.2); }
+ }
