@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import "./App.css"
 import List from "./components/List"
+import clearsound from "./clearsound.mp3"
+import china from "./china.mp4"
 
 export class App extends Component {
   constructor(){
@@ -55,9 +57,13 @@ export class App extends Component {
       alert("The list is empty")
     }
     else if(window.confirm("Do you really want to clear the list?")) {
+      const aud = new Audio(clearsound)
+      aud.playbackRate = 1.8;
+      aud.play();
       localStorage.setItem("local",JSON.stringify([]))
       this.setState({ list : []})
     }
+     
   }
   
   //deleting single the elements from the list
@@ -70,21 +76,21 @@ export class App extends Component {
     })
    }
     
-   addIcon = (e) => {
-     
-   }
+    
    
-  //  this.state.list
+  //  onMouseOver={this.addIcon}
+   
 
   render() {
     return (
       <div className="App">
         <div className="App__background">
+          <video autoPlay loop muted className="App__background__video" src={china}></video>
           <h1>Todo List</h1>
         </div>
         <div className="App__input">
           <input  placeholder="Enter the new item..." onChange={ e => this.inputChangeTracker(e.target.value)} value={this.state.newItem} type="text" required></input>
-          <button className="App__input__add" onMouseOver={this.addIcon}  onClick={this.addItem} >A D D</button>
+          <button className="App__input__add"  onClick={this.addItem} >A D D</button>
           <button className="App__input__clear"  onClick={this.clearAll}>C L E A R</button>
         </div>
         <div className="App__list">

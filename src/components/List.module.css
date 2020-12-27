@@ -3,11 +3,12 @@
   display: flex;
   width: 800px;
   margin: 20px auto;
+  transition: all 0.8s ease-out;
 }
 
 i{
-    color: rgb(41, 40, 42);
-    font-size: 30px;
+ color: rgb(41, 40, 42);
+ font-size: 30px;
 }
 
 i:hover{
@@ -87,7 +88,10 @@ tr:nth-child(2n+1){
  }
 
  @keyframes shake{
-    0% { transform: translate(2px, 2px) rotate(-10deg) scale(1.2); }
+    0% { transform: translate(2px, -2px) rotate(-10deg) scale(1.2); }
   50% { transform: translate(-2px, 2px) rotate(10deg) scale(1.2); }
   100% { transform: translate(2px, -2px) rotate(-10deg) scale(1.2); }
  }
+
+
+ 
