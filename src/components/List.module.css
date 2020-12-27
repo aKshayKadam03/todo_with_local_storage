@@ -1,4 +1,5 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Rajdhani:wght@500;700&family=Roboto:wght@900&display=swap');
+
 .App__list__item{
   display: flex;
   width: 800px;
@@ -20,22 +21,22 @@ i:hover{
 }
 
 table{
-    width: 80%;
-    margin: auto;
+    width: 60%;
+    margin: auto;  
 }
 
  
 table > tbody > tr{
     background-color: blanchedalmond;
     height: 50px;
-    margin: 100px;
+    margin: 100px 0px;
     padding: 2% 5%;
     align-items: center;
-    /* justify-content: space-around; */
     font-size: 18px;
     text-align: left;
     position: relative;
     border-radius: 10px;
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -53,17 +54,22 @@ td:nth-child(2){
    width: 600px;
    overflow:hidden;
    text-transform: capitalize;
-    color: #eeeeee;
+   color: rgb(255, 255, 248);
+   text-align: left; 
 }
 td:nth-child(3){
     max-width: 50px;
+    text-align: center;
  }  
 
+
+  
+ 
  tr:nth-child(2n){
     animation-name: leftToRight;
     animation-duration: 0.8s;
     background-color: #b088f9;
-  
+   
 }
 
 tr:nth-child(2n+1){
@@ -94,4 +100,61 @@ tr:nth-child(2n+1){
  }
 
 
- 
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .App__list__item{
+        width: 500px;
+        margin: 20px auto;
+      }
+      table > tbody > tr{
+        padding: 2%;
+        font-size: 18px; 
+      }
+    
+    
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .App__list__item{
+        width: 550px;
+        margin: 20px auto;
+      }
+      table > tbody > tr{
+        padding: 2%;
+        font-size: 18px; 
+      }
+    
+  }
+  
+  
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .App__list__item{
+        width: 700px;
+        margin: 20px auto;
+      }
+    table > tbody > tr{
+        padding: 2%;
+        font-size: 18px; 
+      }
+    
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .App__list__item{
+        width: 700px;
+      
+      }
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .App__list__item{
+        width: 800px;
+        
+      }
+  
+  }

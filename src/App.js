@@ -78,12 +78,11 @@ export class App extends Component {
     
     
    
-  //  onMouseOver={this.addIcon}
    
 
   render() {
     return (
-      <div className="App">
+      <div  className="App">
         <div className="App__background">
           <video autoPlay loop muted className="App__background__video" src={china}></video>
           <h1>Todo List</h1>
