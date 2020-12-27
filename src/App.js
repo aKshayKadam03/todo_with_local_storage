@@ -76,7 +76,11 @@ export class App extends Component {
     })
    }
     
-    
+   onKeyDownHandler = (e) =>{
+    if(e.key === "Enter"){
+      this.addItem();
+    }
+   } 
    
    
 
@@ -88,8 +92,8 @@ export class App extends Component {
           <h1>Todo List</h1>
         </div>
         <div className="App__input">
-          <input  placeholder="Enter the new item..." onChange={ e => this.inputChangeTracker(e.target.value)} value={this.state.newItem} type="text" required></input>
-          <button className="App__input__add"  onClick={this.addItem} >A D D</button>
+          <input onKeyPress={this.onKeyDownHandler}  placeholder="Enter the new item..." onChange={ e => this.inputChangeTracker(e.target.value)} value={this.state.newItem} type="text" required></input>
+          <button className="App__input__add" onClick={this.addItem} >A D D</button>
           <button className="App__input__clear"  onClick={this.clearAll}>C L E A R</button>
         </div>
         <div className="App__list">
