@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import "./App.css"
 import List from "./components/List"
-import clearsound from "./clearsound.mp3"
 import china from "./china.mp4"
 
 export class App extends Component {
@@ -43,13 +42,18 @@ export class App extends Component {
       localStorage.setItem("local",JSON.stringify(array))
     }
     
+    
+    
+
     this.setState({
       list : array,
       newItem : "",
     })
+   
     }
    }
 
+   
 
   //deleting all the elements from the list
   clearAll = () =>{
@@ -57,9 +61,6 @@ export class App extends Component {
       alert("The list is empty")
     }
     else if(window.confirm("Do you really want to clear the list?")) {
-      const aud = new Audio(clearsound)
-      aud.playbackRate = 1.8;
-      aud.play();
       localStorage.setItem("local",JSON.stringify([]))
       this.setState({ list : []})
     }
@@ -75,7 +76,14 @@ export class App extends Component {
       list : update,
     })
    }
-    
+  
+   //editing a submitted element
+  //  editItem = (id) => {
+  //    const array = [...this.state.list]
+  //    let edit = array.find(ele => ele.id === id)
+  //   }
+  
+  //submitting with enter key
    onKeyDownHandler = (e) =>{
     if(e.key === "Enter"){
       this.addItem();
@@ -91,23 +99,23 @@ export class App extends Component {
           <video autoPlay loop muted className="App__background__video" src={china}></video>
           <h1>Todo List</h1>
         </div>
-        <div className="App__input">
-          <input onKeyPress={this.onKeyDownHandler}  placeholder="Enter the new item..." onChange={ e => this.inputChangeTracker(e.target.value)} value={this.state.newItem} type="text" required></input>
-          <button className="App__input__add" onClick={this.addItem} >A D D</button>
-          <button className="App__input__clear"  onClick={this.clearAll}>C L E A R</button>
-        </div>
         <div className="App__list">
-        <table>
-          <tbody> 
+          <div className="App__input">
+            <input onKeyPress={this.onKeyDownHandler}  placeholder="Enter the new item..." onChange={ e => this.inputChangeTracker(e.target.value)} value={this.state.newItem} type="text" required></input>
+            <button className="App__input__add"  onClick={this.addItem} >A D D</button>
+            <button className="App__input__clear"  onClick={this.clearAll}>C L E A R</button>
+          </div>
+          <table>
+             <tbody> 
             {
-            this.state.list.map((item,index) => {
+            this.state.list.slice(0).reverse().map((item,index) => {
                 return(
-                <List key = {item.id} id={item.id} deleteItem={this.deleteItem} serial = {index+1} value = {item.singleValue} date = {item.date}></List>
+                <List key = {item.id} id={item.id} editItem = {this.editItem} deleteItem={this.deleteItem} serial = {index+1} value = {item.singleValue} date = {item.date}></List>
                 )
               })
             }
-          </tbody> 
-        </table>
+            </tbody> 
+          </table>
         </div> 
        </div>
     )

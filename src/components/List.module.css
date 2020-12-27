@@ -2,7 +2,6 @@
 
 .App__list__item{
   display: flex;
-  width: 800px;
   margin: 20px auto;
   transition: all 0.8s ease-out;
 }
@@ -21,16 +20,16 @@ i:hover{
 }
 
 table{
-    width: 60%;
-    margin: auto;  
+    width: 90%;
+    margin: auto;
 }
 
  
 table > tbody > tr{
     background-color: blanchedalmond;
     height: 50px;
-    margin: 100px 0px;
-    padding: 2% 5%;
+    padding: 10px;
+    margin: 100px auto;
     align-items: center;
     font-size: 18px;
     text-align: left;
@@ -43,22 +42,22 @@ table > tbody > tr{
 
  
 td:nth-child(1){
-    width: 100px;
-    max-width: 100px;
+    width: 20%;
+    max-width: 20%;
     text-align: center;
     color: rgb(41, 40, 42);
 }
 
 td:nth-child(2){
-   max-width: 600px;
-   width: 600px;
+   max-width: 70%;
+   width: 70%;
    overflow:hidden;
    text-transform: capitalize;
    color: rgb(255, 255, 248);
    text-align: left; 
 }
 td:nth-child(3){
-    max-width: 50px;
+    max-width: 10%;
     text-align: center;
  }  
 
@@ -66,33 +65,21 @@ td:nth-child(3){
   
  
  tr:nth-child(2n){
-    animation-name: leftToRight;
-    animation-duration: 0.8s;
+    /* animation-name: leftToRight;
+    animation-duration: 0.8s; */
     background-color: #b088f9;
    
 }
 
 tr:nth-child(2n+1){
-    animation-name: rightToLeft;
-    animation-duration: 0.8s;
+    /* animation-name: rightToLeft;
+    animation-duration: 0.8s; */
     background-color: #98acf8;
 }
 
 
 /* Animations */
-
-@keyframes leftToRight{
-    0% {left : -1000px}
-    80% {left: 200px;}
-    100% {left: 0px;}
- }
-
- @keyframes rightToLeft{
-    0% {right : -1000px}
-    80% {right: 200px;}
-    100% {right: 0px;}
- }
-
+ 
  @keyframes shake{
     0% { transform: translate(2px, -2px) rotate(-10deg) scale(1.2); }
   50% { transform: translate(-2px, 2px) rotate(10deg) scale(1.2); }
@@ -102,28 +89,13 @@ tr:nth-child(2n+1){
 
  /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .App__list__item{
-        width: 350px;
-        margin: 20px auto;
-      }
-      table > tbody > tr{
-        padding: 2%;
-        font-size: 18px; 
-      }
-    
+     
     
   }
   
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
-    .App__list__item{
-        width: 450px;
-        margin: 20px auto;
-      }
-      table > tbody > tr{
-        padding: 2%;
-        font-size: 18px; 
-      }
+    
     
   }
   
@@ -131,30 +103,17 @@ tr:nth-child(2n+1){
   
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
-    .App__list__item{
-        width: 700px;
-        margin: 20px auto;
-      }
-    table > tbody > tr{
-        padding: 2%;
-        font-size: 18px; 
-      }
+     
     
   }
   
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
-    .App__list__item{
-        width: 700px;
-      
-      }
+    
   }
   
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
-    .App__list__item{
-        width: 800px;
-        
-      }
+   
   
   }
